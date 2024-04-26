@@ -54,7 +54,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 22);
+            this.label1.Location = new System.Drawing.Point(35, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 0;
@@ -62,7 +62,7 @@
             // 
             // TNombre
             // 
-            this.TNombre.Location = new System.Drawing.Point(96, 19);
+            this.TNombre.Location = new System.Drawing.Point(88, 19);
             this.TNombre.Name = "TNombre";
             this.TNombre.Size = new System.Drawing.Size(140, 20);
             this.TNombre.TabIndex = 1;
@@ -70,7 +70,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 60);
+            this.label2.Location = new System.Drawing.Point(35, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 2;
@@ -78,7 +78,7 @@
             // 
             // TApellido
             // 
-            this.TApellido.Location = new System.Drawing.Point(96, 57);
+            this.TApellido.Location = new System.Drawing.Point(88, 57);
             this.TApellido.Name = "TApellido";
             this.TApellido.Size = new System.Drawing.Size(140, 20);
             this.TApellido.TabIndex = 3;
@@ -86,7 +86,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 96);
+            this.label3.Location = new System.Drawing.Point(16, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 4;
@@ -94,7 +94,7 @@
             // 
             // nudDia
             // 
-            this.nudDia.Location = new System.Drawing.Point(96, 94);
+            this.nudDia.Location = new System.Drawing.Point(88, 94);
             this.nudDia.Maximum = new decimal(new int[] {
             31,
             0,
@@ -116,7 +116,7 @@
             // 
             // nudMes
             // 
-            this.nudMes.Location = new System.Drawing.Point(142, 94);
+            this.nudMes.Location = new System.Drawing.Point(134, 94);
             this.nudMes.Maximum = new decimal(new int[] {
             12,
             0,
@@ -138,7 +138,7 @@
             // 
             // nudAnio
             // 
-            this.nudAnio.Location = new System.Drawing.Point(188, 94);
+            this.nudAnio.Location = new System.Drawing.Point(180, 94);
             this.nudAnio.Maximum = new decimal(new int[] {
             0,
             0,
@@ -150,7 +150,7 @@
             // 
             // BIngresar
             // 
-            this.BIngresar.Location = new System.Drawing.Point(96, 132);
+            this.BIngresar.Location = new System.Drawing.Point(88, 132);
             this.BIngresar.Name = "BIngresar";
             this.BIngresar.Size = new System.Drawing.Size(140, 25);
             this.BIngresar.TabIndex = 8;
@@ -174,7 +174,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(280, 19);
+            this.label4.Location = new System.Drawing.Point(272, 19);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 10;
@@ -185,77 +185,77 @@
             this.LCantQuerubin.AutoSize = true;
             this.LCantQuerubin.BackColor = System.Drawing.Color.White;
             this.LCantQuerubin.ForeColor = System.Drawing.Color.Black;
-            this.LCantQuerubin.Location = new System.Drawing.Point(280, 57);
+            this.LCantQuerubin.Location = new System.Drawing.Point(272, 57);
             this.LCantQuerubin.Name = "LCantQuerubin";
-            this.LCantQuerubin.Size = new System.Drawing.Size(61, 13);
+            this.LCantQuerubin.Size = new System.Drawing.Size(70, 13);
             this.LCantQuerubin.TabIndex = 11;
-            this.LCantQuerubin.Text = "•Querubín:";
+            this.LCantQuerubin.Text = "•Querubín: 0";
             // 
             // LCantBenjamin
             // 
             this.LCantBenjamin.AutoSize = true;
             this.LCantBenjamin.BackColor = System.Drawing.Color.White;
             this.LCantBenjamin.ForeColor = System.Drawing.Color.Black;
-            this.LCantBenjamin.Location = new System.Drawing.Point(280, 94);
+            this.LCantBenjamin.Location = new System.Drawing.Point(272, 94);
             this.LCantBenjamin.Name = "LCantBenjamin";
-            this.LCantBenjamin.Size = new System.Drawing.Size(59, 13);
+            this.LCantBenjamin.Size = new System.Drawing.Size(68, 13);
             this.LCantBenjamin.TabIndex = 12;
-            this.LCantBenjamin.Text = "•Benjamin:";
+            this.LCantBenjamin.Text = "•Benjamin: 0";
             // 
             // LCantInfantil
             // 
             this.LCantInfantil.AutoSize = true;
             this.LCantInfantil.BackColor = System.Drawing.Color.White;
             this.LCantInfantil.ForeColor = System.Drawing.Color.Black;
-            this.LCantInfantil.Location = new System.Drawing.Point(280, 131);
+            this.LCantInfantil.Location = new System.Drawing.Point(272, 131);
             this.LCantInfantil.Name = "LCantInfantil";
-            this.LCantInfantil.Size = new System.Drawing.Size(47, 13);
+            this.LCantInfantil.Size = new System.Drawing.Size(56, 13);
             this.LCantInfantil.TabIndex = 13;
-            this.LCantInfantil.Text = "•Infantil:";
+            this.LCantInfantil.Text = "•Infantil: 0";
             // 
             // LCantCadete
             // 
             this.LCantCadete.AutoSize = true;
             this.LCantCadete.BackColor = System.Drawing.Color.White;
             this.LCantCadete.ForeColor = System.Drawing.Color.Black;
-            this.LCantCadete.Location = new System.Drawing.Point(369, 57);
+            this.LCantCadete.Location = new System.Drawing.Point(361, 57);
             this.LCantCadete.Name = "LCantCadete";
-            this.LCantCadete.Size = new System.Drawing.Size(50, 13);
+            this.LCantCadete.Size = new System.Drawing.Size(59, 13);
             this.LCantCadete.TabIndex = 14;
-            this.LCantCadete.Text = "•Cadete:";
+            this.LCantCadete.Text = "•Cadete: 0";
             // 
             // LCantJuvenil
             // 
             this.LCantJuvenil.AutoSize = true;
             this.LCantJuvenil.BackColor = System.Drawing.Color.White;
             this.LCantJuvenil.ForeColor = System.Drawing.Color.Black;
-            this.LCantJuvenil.Location = new System.Drawing.Point(369, 82);
+            this.LCantJuvenil.Location = new System.Drawing.Point(361, 82);
             this.LCantJuvenil.Name = "LCantJuvenil";
-            this.LCantJuvenil.Size = new System.Drawing.Size(49, 13);
+            this.LCantJuvenil.Size = new System.Drawing.Size(58, 13);
             this.LCantJuvenil.TabIndex = 15;
-            this.LCantJuvenil.Text = "•Juvenil:";
+            this.LCantJuvenil.Text = "•Juvenil: 0";
             // 
             // LCantAmateur
             // 
             this.LCantAmateur.AutoSize = true;
             this.LCantAmateur.BackColor = System.Drawing.Color.White;
             this.LCantAmateur.ForeColor = System.Drawing.Color.Black;
-            this.LCantAmateur.Location = new System.Drawing.Point(369, 107);
+            this.LCantAmateur.Location = new System.Drawing.Point(361, 107);
             this.LCantAmateur.Name = "LCantAmateur";
-            this.LCantAmateur.Size = new System.Drawing.Size(55, 13);
+            this.LCantAmateur.Size = new System.Drawing.Size(64, 13);
             this.LCantAmateur.TabIndex = 16;
-            this.LCantAmateur.Text = "•Amateur:";
+            this.LCantAmateur.Text = "•Amateur: 0";
             // 
             // LCantVeterano
             // 
             this.LCantVeterano.AutoSize = true;
             this.LCantVeterano.BackColor = System.Drawing.Color.White;
             this.LCantVeterano.ForeColor = System.Drawing.Color.Black;
-            this.LCantVeterano.Location = new System.Drawing.Point(369, 132);
+            this.LCantVeterano.Location = new System.Drawing.Point(361, 132);
             this.LCantVeterano.Name = "LCantVeterano";
-            this.LCantVeterano.Size = new System.Drawing.Size(59, 13);
+            this.LCantVeterano.Size = new System.Drawing.Size(68, 13);
             this.LCantVeterano.TabIndex = 17;
-            this.LCantVeterano.Text = "•Veterano:";
+            this.LCantVeterano.Text = "•Veterano: 0";
             // 
             // FCategoria
             // 

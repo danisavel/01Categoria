@@ -21,7 +21,7 @@ namespace _01Categoria
             //Variables para el límite del año en el formulario
             decimal anioActual = DateTime.Today.Year;
             nudAnio.Maximum = anioActual - 2;
-            nudAnio.Minimum = 1924;
+            nudAnio.Minimum = anioActual - 100;
         }
         
         private void BIngresar_Click(object sender, EventArgs e)
@@ -35,23 +35,24 @@ namespace _01Categoria
             string apellido = Convert.ToString(TApellido.Text);
             string categoria;
 
+            bool fechaValida = false;
+            
             //Si no introdujo un nombre
             if (nombre == "")
             {
-                MessageBox.Show("Ingrese un nombre");
+                MessageBox.Show("Ingrese un nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 TNombre.Focus();
             }
             //Si no introdujo un apellido
             else if (apellido == "")
             {
-                MessageBox.Show("Ingrese un apellido");
+                MessageBox.Show("Ingrese un apellido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 TApellido.Focus();
             }
 
-            //Si están todos los datos
+            //Si están todos los datos VALIDAR FECHA
             else
             {
-                //VALIDAR FECHA
                 //Convertir valor de entrada
                 int dia = Convert.ToInt32(nudDia.Value);
                 int mes = Convert.ToInt32(nudMes.Value);
@@ -73,10 +74,7 @@ namespace _01Categoria
                         nudDia.Focus();
                     }
                     else
-                    {
-                        //Reemplazar MB con todo lo que hace si es correcta la fecha
-                        MessageBox.Show($"La fecha {dia}/{mes}/{anio} es correcta", "Confirmado");
-                    }
+                        fechaValida = true;
                 }
                 else if ((dia == 30) && (mes == 2))
                 {
@@ -92,87 +90,86 @@ namespace _01Categoria
                         nudDia.Focus();
                     }
                     else
-                    {
-                        //Reemplazar MB con todo lo que hace si es correcta la fecha
-                        MessageBox.Show($"La fecha {dia}/{mes}/{anio} es correcta", "Confirmado");
-                    }
+                        fechaValida = true;
                 }
-                //Si la fecha es correcta
+                else
+                    fechaValida = true;
+            }
+            
+            if (fechaValida == true)
+            {
+                //Cambiar iniciales de nombre y apellido a mayúscula, y el resto a minúscula 
+                int longNom = nombre.Length -1;
+                string nomInicial = nombre.Substring(0, 1);
+                nomInicial = nomInicial.ToUpper();
+                string nomMinusc = nombre.Substring(1, longNom);
+                nomMinusc = nomMinusc.ToLower();
+                string nombreFin = nomInicial + nomMinusc;
+
+                int longApe = apellido.Length - 1;
+                string apeInicial = apellido.Substring(0, 1);
+                apeInicial = apeInicial.ToUpper();
+                string apeMinusc = apellido.Substring(1, longApe);
+                apeMinusc = apeMinusc.ToLower();
+                string apellidoFin = apeInicial + apeMinusc;
+
+                //Calcular edad
+                int edad = anioAct - anioNac;
+
+                //CATEGORÍAS POR EDAD
+                if (edad < 3)
+                {
+                    MessageBox.Show("Los menores de 3 años no pueden ingresar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    nudDia.Focus();
+                }
+                else if (edad <= 5)
+                    {
+                    cantQuerubin++;
+                    categoria = "Querubín";
+                    MessageBox.Show($"Ingreso exitoso\n-{apellidoFin}, {nombreFin}.\n-Edad: {edad} años.\n-Categoría: {categoria}.", "Confirmado");
+                    }
+                else if (edad <= 8)
+                {
+                    cantBenjamin++;
+                    categoria = "Benjamín";
+                    MessageBox.Show($"Ingreso exitoso\n-{apellidoFin}, {nombreFin}.\n-Edad: {edad} años.\n-Categoría: {categoria}.", "Confirmado");
+                }
+                else if (edad <= 12)
+                {
+                    cantInfantil++;
+                    categoria = "Infantil";
+                    MessageBox.Show($"Ingreso exitoso\n-{apellidoFin}, {nombreFin}.\n-Edad: {edad} años.\n-Categoría: {categoria}.", "Confirmado");
+                }
+                else if (edad <= 15)
+                {
+                    cantCadete++;
+                    categoria = "Cadete";
+                    MessageBox.Show($"Ingreso exitoso\n-{apellidoFin}, {nombreFin}.\n-Edad: {edad} años.\n-Categoría: {categoria}.", "Confirmado");
+                }
+                else if (edad <= 18)
+                {
+                    cantJuvenil++;
+                    categoria = "Juvenil";
+                    MessageBox.Show($"Ingreso exitoso\n-{apellidoFin}, {nombreFin}.\n-Edad: {edad} años.\n-Categoría: {categoria}.", "Confirmado");
+                }
+                else if (edad <= 30)
+                {
+                    cantAmateur++;
+                    categoria = "Amateur";
+                    MessageBox.Show($"Ingreso exitoso\n-{apellidoFin}, {nombreFin}.\n-Edad: {edad} años.\n-Categoría: {categoria}.", "Confirmado");
+                }
                 else
                 {
-                    //Cambiar iniciales de nombre y apellido a mayúscula, y el resto a minúscula 
-                    int longNom = nombre.Length -1;
-                    string nomInicial = nombre.Substring(0,1);
-                    nomInicial = nomInicial.ToUpper();
-                    string nomMinusc = nombre.Substring(1, longNom);
-                    nomMinusc = nomMinusc.ToLower();
-                    string nombreFin = nomInicial + nomMinusc;
-
-                    int longApe = apellido.Length -1;
-                    string apeInicial = apellido.Substring(0,1);
-                    apeInicial = apeInicial.ToUpper();
-                    string apeMinusc = apellido.Substring(1, longApe);
-                    apeMinusc = apeMinusc.ToLower();
-                    string apellidoFin = apeInicial + apeMinusc;
-
-                    //Calcular edad
-                    int edad = anioAct - anioNac;
-
-                    //CATEGORÍAS POR EDAD
-                    if (edad < 3)
-                    {
-                        MessageBox.Show("Los menores de 3 años no pueden ingresar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        nudDia.Focus();
-                    }
-                    else if ((edad >= 3) && (edad <= 5))
-                    {
-                        cantQuerubin++;
-                        categoria = "Querubín";
-                        MessageBox.Show($"Ingreso exitoso\n-{apellidoFin}, {nombreFin}.\n-Edad: {edad} años.\n-Categoría: {categoria}.", "Confirmado");
-                    }
-                    else if ((edad >= 6) && (edad <= 8))
-                    {
-                        cantBenjamin++;
-                        categoria = "Benjamín";
-                        MessageBox.Show($"Ingreso exitoso\n-{apellidoFin}, {nombreFin}.\n-Edad: {edad} años.\n-Categoría: {categoria}.", "Confirmado");
-                    }
-                    else if ((edad >= 9) && (edad <= 12))
-                    {
-                        cantInfantil++;
-                        categoria = "Infantil";
-                        MessageBox.Show($"Ingreso exitoso\n-{apellidoFin}, {nombreFin}.\n-Edad: {edad} años.\n-Categoría: {categoria}.", "Confirmado");
-                    }
-                    else if ((edad >= 13) && (edad <= 15))
-                    {
-                        cantCadete++;
-                        categoria = "Cadete";
-                        MessageBox.Show($"Ingreso exitoso\n-{apellidoFin}, {nombreFin}.\n-Edad: {edad} años.\n-Categoría: {categoria}.", "Confirmado");
-                    }
-                    else if ((edad >= 16) && (edad <= 18))
-                    {
-                        cantJuvenil++;
-                        categoria = "Juvenil";
-                        MessageBox.Show($"Ingreso exitoso\n-{apellidoFin}, {nombreFin}.\n-Edad: {edad} años.\n-Categoría: {categoria}.", "Confirmado");
-                    }
-                    else if ((edad >= 19) && (edad <= 30))
-                    {
-                        cantAmateur++;
-                        categoria = "Amateur";
-                        MessageBox.Show($"Ingreso exitoso\n-{apellidoFin}, {nombreFin}.\n-Edad: {edad} años.\n-Categoría: {categoria}.", "Confirmado");
-                    }
-                    else
-                    {
-                        cantVeterano++;
-                        categoria = "Veterano";
-                        MessageBox.Show($"Ingreso exitoso\n-{apellidoFin}, {nombreFin}.\n-Edad: {edad} años.\n-Categoría: {categoria}.", "Confirmado");
-                    }
-                    //Limpiar campos
-                    TNombre.Clear();
-                    TApellido.Clear();
-                    nudDia.Value = nudDia.Minimum;
-                    nudMes.Value = nudMes.Minimum;
-                    nudAnio.Value = nudAnio.Minimum;
+                    cantVeterano++;
+                    categoria = "Veterano";
+                    MessageBox.Show($"Ingreso exitoso\n-{apellidoFin}, {nombreFin}.\n-Edad: {edad} años.\n-Categoría: {categoria}.", "Confirmado");
                 }
+                //Limpiar campos
+                TNombre.Clear();
+                TApellido.Clear();
+                nudDia.Value = nudDia.Minimum;
+                nudMes.Value = nudMes.Minimum;
+                nudAnio.Value = nudAnio.Minimum;
             }
             //Actualizar categorías
             LCantQuerubin.Text = ($"•Querubín: {cantQuerubin}");
